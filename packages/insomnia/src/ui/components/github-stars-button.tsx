@@ -35,7 +35,7 @@ export const GitHubStarsButton = () => {
           return;
         }
 
-        setStarCount(info.watchers);
+        setStarCount(info.forks);
         setError(null);
       })
       .catch(error => {
@@ -78,13 +78,13 @@ export const GitHubStarsButton = () => {
           className="px-4 py-1 rounded-l-lg last-of-type:rounded-r-lg outline-none flex items-center justify-center gap-2 aria-pressed:bg-[--hl-sm] text-[--color-font] hover:bg-[--hl-xs] focus:ring-1 ring-transparent focus:ring-[--hl-md] transition-all text-sm"
         >
           <Icon icon={['fab', 'github']} />
-          Star
+          Fork
         </a>
       </Link>
       {shouldShowCount && (
         <Link onPress={counterClick}>
           <a
-            href="https://github.com/Kong/insomnia/stargazers"
+            href="https://github.com/Kong/insomnia/forks"
             className="px-4 py-1 rounded-r-lg outline-none flex items-center justify-center gap-2 aria-pressed:bg-[--hl-sm] text-[--color-font] hover:bg-[--hl-xs] focus:ring-1 ring-transparent focus:ring-[--hl-md] transition-all text-sm"
           >
             {starCount.toLocaleString()}
