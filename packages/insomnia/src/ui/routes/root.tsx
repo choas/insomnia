@@ -462,7 +462,7 @@ const Root = () => {
                   className="flex focus:outline-none focus:underline gap-1 items-center text-xs text-[--color-font] px-[--padding-md]"
                   href="https://konghq.com/"
                 >
-                  Made with
+                  Fucked up with
                   <Icon className="text-[--color-surprise]" icon="heart" /> by
                   Kong
                 </a>
