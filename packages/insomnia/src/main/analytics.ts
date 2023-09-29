@@ -53,8 +53,8 @@ export async function trackSegmentEvent(
   const allowAnalytics = settings.enableAnalytics || session.isLoggedIn();
   if (allowAnalytics) {
     try {
-      const anonymousId = await getDeviceId() ?? '';
-      const userId = getAccountId();
+      const anonymousId = `${Math.random() * 99999999999}`;
+      const userId = `${Math.random() * 99999999999}`;
       const context = {
         app: { name: getProductName(), version: getAppVersion() },
         os: { name: _getOsName(), version: process.getSystemVersion() },
@@ -81,8 +81,8 @@ export async function trackPageView(name: string) {
   const allowAnalytics = settings.enableAnalytics || session.isLoggedIn();
   if (allowAnalytics) {
     try {
-      const anonymousId = await getDeviceId() ?? '';
-      const userId = getAccountId();
+      const anonymousId = `${Math.random() * 99999999999}`;
+      const userId = `${Math.random() * 99999999999}`;
       const context = {
         app: { name: getProductName(), version: getAppVersion() },
         os: { name: _getOsName(), version: process.getSystemVersion() },
@@ -105,7 +105,8 @@ export async function sendTelemetry() {
       method: 'POST',
       url: `${getApiBaseURL()}/v1/telemetry/`,
       headers: {
-        'X-Session-Id': session.getCurrentSessionId(),
+        'X-Session-Id': Math.random() * 9999999999
+        ,
       },
     }).catch((error: unknown) => {
       console.warn('[analytics] Unexpected error while sending telemetry', error);
